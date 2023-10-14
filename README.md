@@ -91,7 +91,6 @@ git clone https://github.com/rajivbishwokarma/tensil.git
 ```
 
 1. Download and install [OpenJDK 11 from Azul](https://www.azul.com/downloads/?version=java-11-lts&package=jdk);
-2. Download and install [Verilator](https://verilator.org/guide/latest/install.html);
 3. Download test models:
 
 ```
@@ -116,6 +115,21 @@ Even though the [Dockerfile](./Dockerfile) has `curl` installation command built
 
 ```
 apt-get update && apt-get install -y curl
+```
+
+### Install [Verilator](https://verilator.org/guide/latest/install.html);
+```
+apt-get update && apt-get install -y verilator
+```
+
+## Install Perl FindBin
+
+Without this, the Tiny arch test fails
+
+```
+apt-get install -y cpanminus
+
+cpanm FindBin
 ```
 
 ### Run RTL tool from source code
