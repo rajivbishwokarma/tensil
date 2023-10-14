@@ -91,6 +91,8 @@ I have created another docker container based on the original one, which has the
 docker pull rajivbishwokarma/tensil:v2
 ```
 
+If you would like to build it yourself, then following will help. 
+
 ### Clone this repo:
 ```
 git clone https://github.com/rajivbishwokarma/tensil.git
