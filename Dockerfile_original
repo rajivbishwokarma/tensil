@@ -1,7 +1,6 @@
 FROM azul/zulu-openjdk:11 as build
 
-RUN apt-get update 
-RUN apt-get -y install curl
+RUN apt-get update && apt-get -y install curl
 
 WORKDIR /work
 COPY mill build.sc ./
@@ -18,8 +17,7 @@ FROM azul/zulu-openjdk:11 as models
 
 WORKDIR /work
 
-RUN apt-get update
-RUN apt-get -y install wget
+RUN apt-get update && apt-get -y install wget
 RUN wget https://github.com/tensil-ai/tensil-models/archive/main.tar.gz && tar xf main.tar.gz
 
 FROM azul/zulu-openjdk:11

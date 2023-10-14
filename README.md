@@ -85,8 +85,10 @@ Use PYNQ and Jupyter notebooks to run AI/ML model on FPGA. (See in `notebooks`.)
 ![Resnet on PYNQ](https://s3.us-west-1.amazonaws.com/downloads.tensil.ai/doc/resnet20_on_pynq.png)
 
 ## For maintainers
-
-### Additional setup steps
+### Clone this repo:
+```
+git clone https://github.com/rajivbishwokarma/tensil.git
+```
 
 1. Download and install [OpenJDK 11 from Azul](https://www.azul.com/downloads/?version=java-11-lts&package=jdk);
 2. Download and install [Verilator](https://verilator.org/guide/latest/install.html);
@@ -97,6 +99,23 @@ wget https://github.com/tensil-ai/tensil-models/archive/main.tar.gz
 tar xf main.tar.gz
 mv tensil-models-main models
 rm main.tar.gz
+```
+
+### Build the docker container:
+
+```
+docker build -t tensil:latest .
+```
+
+### Run the docker container with:
+```
+docker run -v $(pwd):/work -w /work -it tensil bash
+```
+
+Even though the [Dockerfile](./Dockerfile) has `curl` installation command built into it, when running [mil](./mill), it will not find curl, so before running [mil](./mill) manually install curl with:
+
+```
+apt-get update && apt-get install -y curl
 ```
 
 ### Run RTL tool from source code
