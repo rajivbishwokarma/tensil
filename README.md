@@ -85,6 +85,12 @@ Use PYNQ and Jupyter notebooks to run AI/ML model on FPGA. (See in `notebooks`.)
 ![Resnet on PYNQ](https://s3.us-west-1.amazonaws.com/downloads.tensil.ai/doc/resnet20_on_pynq.png)
 
 ## For maintainers
+
+I have created another docker container based on the original one, which has the files already installed. Pull it with:
+```
+docker pull rajivbishwokarma/tensil:v2
+```
+
 ### Clone this repo:
 ```
 git clone https://github.com/rajivbishwokarma/tensil.git
